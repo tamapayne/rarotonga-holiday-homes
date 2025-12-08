@@ -35,14 +35,11 @@ amenities:
   - "Wheelchair accessible"
   - "Ocean views"
 highlights:
-  - "Top 10% of Homes - Highly ranked based on ratings, reviews, and reliability"
-  - "One of the few places in the area with a pool"
-  - "Guest Favourite - Rated 5.0 out of 5 stars"
+  - "One of the few places with a pool in the area"
   - "Exceptional check-in experience"
 host:
   name: "Lynn"
   experience: "3 years of hosting"
-  responseRate: "100% - responds within an hour"
 houseRules:
   - "Check-in after 2:00 PM"
   - "6 guests maximum"
@@ -54,49 +51,14 @@ safety:
   - "Exterior security cameras on property"
 ---
 
-Rangiura Retreat is a private tropical oasis offering the perfect blend of privacy and luxury in Polynesian living. This 3-bedroom home features a swimming pool and expansive covered deck, ideal for relaxing and enjoying the natural beauty of Rarotonga.
+Rangiura Retreat is a private tropical oasis offering the perfect blend of privacy and luxury in Polynesian living. This stunning 3-bedroom home features a swimming pool and expansive covered deck, ideal for relaxing and enjoying the natural beauty of Rarotonga. Nestled within a lush tropical garden, the property boasts an elevated, north-facing aspect that captures all-day sun, allowing guests to enjoy unimpeded views across the coastal plain towards the Pacific Ocean from the main deck.
 
-## Location
+Conveniently located in Avarua, the property places you within just 5 minutes of Rarotonga International Airport, the main township of Avarua, and the nearest swimming beach. This prime location offers both tranquility and accessibility, making it the perfect base for your island adventure.
 
-The property is nestled within a lush tropical garden and boasts an elevated, north-facing aspect that captures all-day sun. Guests can enjoy unimpeded views across the coastal plain towards the Pacific Ocean from the main deck.
+The accommodation features two spacious main bedrooms, each with king-sized beds and air conditioning units. Both rooms offer breathtaking ocean views and direct access to the main deck, creating a seamless indoor-outdoor living experience. The third bedroom is equipped with a set of bunk beds and a pedestal fan, making it ideal for children. All bedrooms are light and airy, designed to maximize the natural beauty of the surroundings while ensuring your comfort.
 
-Located in Avarua, the property is conveniently situated within 5 minutes of:
-- Rarotonga International Airport
-- Main township of Avarua
-- Nearest swimming beach
+Inside, you'll find a fully equipped kitchen perfect for preparing meals, a dining area for family gatherings, and a comfortable lounge room where you can unwind after a day of island exploration. A separate laundry room provides added convenience with a washing machine, tub, ironing facilities, and vacuum, ensuring you have everything you need for an extended stay.
 
-## Accommodation Details
+The outdoor living spaces are truly exceptional. The private swimming pool is complemented by a large covered deck, creating the perfect setting for both relaxation and entertainment. BBQ facilities are available on the deck or by the pool, while a dedicated pool house offers bench space, a sink, and a small fridge for your convenience. Whether you're taking a refreshing dip, lounging poolside, or dining al fresco, the outdoor areas provide an idyllic tropical retreat.
 
-### Main Bedrooms
-Two spacious bedrooms with king-sized beds, air conditioning units in each room, ocean views and direct deck access.
-
-### Third Bedroom
-Set of bunk beds with pedestal fan - ideal for children.
-
-All bedrooms are light and airy with breathtaking ocean views and direct access to the main deck.
-
-## Indoor Living Space
-- Fully equipped kitchen
-- Dining area
-- Lounge room
-- Separate laundry with washing machine, tub, ironing facilities, and vacuum
-
-## Outdoor Areas
-- Private swimming pool
-- Large covered deck
-- BBQ facilities (available on deck or by pool)
-- Pool house with bench space, sink, and small fridge
-
-## Complimentary Amenities
-- Tea, coffee, sugar, and milk
-- Bath soap and toilet paper
-- Linen for the duration of stay
-- WiFi/Internet access
-
-## Accessibility
-Full wheelchair access throughout the house, deck, and pool area. All spaces on one level.
-
-## From Your Host
-"This place can provide you the opportunity to escape and relax from the hustle and bustle of daily life. Kia Manuia" - Lynn
-
-Both Lynn and her husband are Cook Islanders. Rangiura Retreat is located at the top half of their property, while Teianas Retreat occupies the bottom half. Both properties are separate and private, accessed via a shared common driveway.
+Your stay includes complimentary tea, coffee, sugar, milk, bath soap, toilet paper, linen for the duration of your visit, and WiFi internet access. The property is fully wheelchair accessible throughout the house, deck, and pool area, with all spaces thoughtfully designed on one level to ensure easy navigation for all guests.
