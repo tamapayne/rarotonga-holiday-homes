@@ -1,0 +1,86 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="relative bg-night-900 text-night-300 overflow-hidden">
+  <!-- Decorative gradient -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-coral-500/50 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-coral-400 to-coral-600 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+              <path d="M12 6c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2s2-.9 2-2V8c0-1.1-.9-2-2-2z"/>
+              <circle cx="12" cy="17" r="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="font-display font-semibold text-xl text-white block">Rarotonga</span>
+            <span class="text-xs text-night-400 tracking-wider uppercase">Holiday Homes</span>
+          </div>
+        </div>
+        <p class="text-night-400 leading-relaxed max-w-md">
+          Handpicked holiday homes on the beautiful island of Rarotonga, Cook Islands. Experience authentic Polynesian hospitality.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-display font-semibold text-white mb-6">Explore</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href="/" class="text-night-400 hover:text-coral-400 transition-colors inline-flex items-center gap-2 group">
+              <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              All Properties
+            </a>
+          </li>
+          <li>
+            <a href="/enquire" class="text-night-400 hover:text-coral-400 transition-colors inline-flex items-center gap-2 group">
+              <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              Make an Enquiry
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-display font-semibold text-white mb-6">Contact</h3>
+        <ul class="space-y-4 text-night-400">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-coral-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Rarotonga, Cook Islands<br/>South Pacific</span>
+          </li>
+          <li>
+            <a href="/enquire" class="inline-flex items-center gap-2 px-4 py-2 bg-coral-500/10 text-coral-400 rounded-full hover:bg-coral-500/20 transition-colors text-sm font-medium">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Send Enquiry
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-night-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-night-500">
+        &copy; {currentYear} Rarotonga Holiday Homes. All rights reserved.
+      </p>
+      <p class="text-sm text-night-600">
+        Made with warmth from the Pacific
+      </p>
+    </div>
+  </div>
+</footer>

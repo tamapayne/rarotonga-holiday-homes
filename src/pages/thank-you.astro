@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Thank You" description="Your enquiry has been received.">
+  <div class="min-h-[70vh] flex items-center justify-center py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Success icon with animation -->
+      <div class="animate-on-load animate-scale-in stagger-1 mb-8">
+        <div class="relative w-24 h-24 mx-auto">
+          <div class="absolute inset-0 bg-lagoon-200 rounded-full animate-ping opacity-25"></div>
+          <div class="relative w-24 h-24 bg-gradient-to-br from-lagoon-400 to-lagoon-600 rounded-full flex items-center justify-center shadow-xl shadow-lagoon-500/30">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="animate-on-load animate-fade-up stagger-2 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-night-900 mb-4">
+        You're All Set!
+      </h1>
+      <p class="animate-on-load animate-fade-up stagger-3 text-lg text-night-500 mb-2">
+        Your enquiry has been received.
+      </p>
+      <p class="animate-on-load animate-fade-up stagger-3 text-night-400 mb-10">
+        We'll review your request and get back to you within 24 hours.
+      </p>
+
+      <!-- Steps card -->
+      <div class="animate-on-load animate-fade-up stagger-4 bg-white rounded-3xl p-8 mb-10 shadow-xl shadow-night-900/5 border border-sand-200">
+        <h2 class="font-display font-semibold text-xl text-night-900 mb-6">What happens next?</h2>
+        <div class="space-y-4 text-left max-w-md mx-auto">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-coral-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-coral-600 font-bold text-sm">1</span>
+            </div>
+            <div>
+              <p class="text-night-700 font-medium">We'll check availability</p>
+              <p class="text-night-400 text-sm">For your requested dates and property</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-lagoon-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-lagoon-600 font-bold text-sm">2</span>
+            </div>
+            <div>
+              <p class="text-night-700 font-medium">Receive confirmation email</p>
+              <p class="text-night-400 text-sm">With pricing and booking details</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-sand-200 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-sand-700 font-bold text-sm">3</span>
+            </div>
+            <div>
+              <p class="text-night-700 font-medium">Prepare for paradise</p>
+              <p class="text-night-400 text-sm">Confirm your booking and pack your bags!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="/"
+        class="animate-on-load animate-fade-up stagger-5 group inline-flex items-center px-8 py-4 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-semibold rounded-full hover:from-coral-600 hover:to-coral-700 transition-all shadow-xl shadow-coral-500/25 hover:shadow-coral-500/40 hover:-translate-y-0.5"
+      >
+        <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        Browse More Properties
+      </a>
+    </div>
+  </div>
+</BaseLayout>

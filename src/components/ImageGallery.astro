@@ -1,0 +1,193 @@
+---
+interface Props {
+  images: string[];
+  propertyName: string;
+}
+
+const { images, propertyName } = Astro.props;
+const mainImage = images[0];
+const thumbnails = images.slice(1, 5);
+const remainingCount = images.length - 5;
+---
+
+<div class="image-gallery">
+  <!-- Desktop Grid Layout -->
+  <div class="hidden md:grid md:grid-cols-4 md:grid-rows-2 gap-2 rounded-xl overflow-hidden h-[500px]">
+    <div class="col-span-2 row-span-2 relative">
+      <img
+        src={mainImage}
+        alt={`${propertyName} - Main image`}
+        class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
+        data-gallery-trigger
+        data-index="0"
+      />
+    </div>
+    {thumbnails.map((image, index) => (
+      <div class="relative">
+        <img
+          src={image}
+          alt={`${propertyName} - Image ${index + 2}`}
+          class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
+          data-gallery-trigger
+          data-index={index + 1}
+        />
+        {index === 3 && remainingCount > 0 && (
+          <div
+            class="absolute inset-0 bg-black/50 flex items-center justify-center cursor-pointer hover:bg-black/60 transition-colors"
+            data-gallery-trigger
+            data-index={index + 1}
+          >
+            <span class="text-white font-semibold text-lg">+{remainingCount} more</span>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <!-- Mobile Slider -->
+  <div class="md:hidden relative">
+    <div class="overflow-x-auto snap-x snap-mandatory flex gap-2 pb-4 scrollbar-hide">
+      {images.map((image, index) => (
+        <div class="flex-shrink-0 w-[85vw] snap-center">
+          <img
+            src={image}
+            alt={`${propertyName} - Image ${index + 1}`}
+            class="w-full h-64 object-cover rounded-lg cursor-pointer"
+            data-gallery-trigger
+            data-index={index}
+          />
+        </div>
+      ))}
+    </div>
+    <div class="text-center text-sm text-gray-500 mt-2">
+      Swipe to see more photos
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button
+      id="lightbox-close"
+      class="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors z-10"
+      aria-label="Close gallery"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button
+      id="lightbox-prev"
+      class="absolute left-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+      aria-label="Previous image"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+      class="max-h-[90vh] max-w-[90vw] object-contain"
+    />
+
+    <button
+      id="lightbox-next"
+      class="absolute right-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+      aria-label="Next image"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
+      1 / {images.length}
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ images, propertyName }}>
+  let currentIndex = 0;
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const triggers = document.querySelectorAll('[data-gallery-trigger]');
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.add('hidden');
+    lightbox?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    if (lightboxImage) {
+      lightboxImage.src = images[currentIndex];
+      lightboxImage.alt = `${propertyName} - Image ${currentIndex + 1}`;
+    }
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  }
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const index = parseInt(trigger.dataset.index || '0');
+      openLightbox(index);
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeLightbox);
+  nextBtn?.addEventListener('click', nextImage);
+  prevBtn?.addEventListener('click', prevImage);
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+</script>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>

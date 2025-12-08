@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const properties = await getCollection('properties');
+const selectedProperty = Astro.url.searchParams.get('property') || '';
+---
+
+<BaseLayout title="Make an Enquiry" description="Enquire about booking a holiday home in Rarotonga, Cook Islands.">
+  <!-- Hero header -->
+  <section class="relative py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-night-900 via-night-800 to-lagoon-900"></div>
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-10 right-10 w-64 h-64 bg-coral-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-48 h-48 bg-lagoon-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="absolute inset-0 texture-overlay opacity-50"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="animate-on-load animate-fade-up stagger-1 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+        <svg class="w-4 h-4 text-coral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <span class="text-sand-200 text-sm font-medium">Get in Touch</span>
+      </div>
+      <h1 class="animate-on-load animate-fade-up stagger-2 font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        Start Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-300 to-coral-500">Island Journey</span>
+      </h1>
+      <p class="animate-on-load animate-fade-up stagger-3 text-sand-200 text-lg">
+        We'll respond within 24 hours with availability and everything you need.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-8">
+    <form
+      id="enquiry-form"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+      class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl shadow-night-900/10 border border-sand-200"
+    >
+      <!-- Property Selection -->
+      <div class="mb-8">
+        <label for="property" class="block text-sm font-semibold text-night-700 mb-3">
+          Which property interests you? <span class="text-coral-500">*</span>
+        </label>
+        <select
+          id="property"
+          name="property"
+          required
+          class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700"
+        >
+          <option value="">Select a property</option>
+          {properties.map((prop) => (
+            <option
+              value={prop.data.name}
+              selected={prop.data.name === selectedProperty}
+            >
+              {prop.data.name} - {prop.data.location}
+            </option>
+          ))}
+          <option value="Not sure / General enquiry">Not sure / General enquiry</option>
+        </select>
+      </div>
+
+      <!-- Name and Email Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label for="name" class="block text-sm font-semibold text-night-700 mb-3">
+            Your Name <span class="text-coral-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700 placeholder:text-night-400"
+            placeholder="John Smith"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold text-night-700 mb-3">
+            Email Address <span class="text-coral-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700 placeholder:text-night-400"
+            placeholder="john@example.com"
+          />
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-8">
+        <label for="phone" class="block text-sm font-semibold text-night-700 mb-3">
+          Phone Number <span class="text-night-400 font-normal">(optional)</span>
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700 placeholder:text-night-400"
+          placeholder="+64 21 123 4567"
+        />
+      </div>
+
+      <!-- Dates Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label for="check-in" class="block text-sm font-semibold text-night-700 mb-3">
+            Check-in Date <span class="text-coral-500">*</span>
+          </label>
+          <input
+            type="date"
+            id="check-in"
+            name="check_in"
+            required
+            class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700"
+          />
+        </div>
+        <div>
+          <label for="check-out" class="block text-sm font-semibold text-night-700 mb-3">
+            Check-out Date <span class="text-coral-500">*</span>
+          </label>
+          <input
+            type="date"
+            id="check-out"
+            name="check_out"
+            required
+            class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700"
+          />
+        </div>
+      </div>
+
+      <!-- Guests -->
+      <div class="mb-8">
+        <label for="guests" class="block text-sm font-semibold text-night-700 mb-3">
+          Number of Guests <span class="text-coral-500">*</span>
+        </label>
+        <select
+          id="guests"
+          name="guests"
+          required
+          class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700"
+        >
+          <option value="">Select number of guests</option>
+          <option value="1">1 guest</option>
+          <option value="2">2 guests</option>
+          <option value="3">3 guests</option>
+          <option value="4">4 guests</option>
+          <option value="5">5 guests</option>
+          <option value="6">6 guests</option>
+          <option value="7+">7+ guests</option>
+        </select>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-8">
+        <label for="message" class="block text-sm font-semibold text-night-700 mb-3">
+          Tell us about your trip <span class="text-night-400 font-normal">(optional)</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          class="w-full px-5 py-4 bg-sand-50 border-2 border-sand-200 rounded-xl focus:ring-4 focus:ring-coral-500/20 focus:border-coral-500 transition-all text-night-700 placeholder:text-night-400 resize-none"
+          placeholder="Special requests, questions, or anything we should know..."
+        ></textarea>
+      </div>
+
+      <!-- Hidden field for form identification -->
+      <input type="hidden" name="_subject" value="New Booking Enquiry - Rarotonga Holiday Homes" />
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="group w-full px-8 py-5 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-bold text-lg rounded-xl hover:from-coral-600 hover:to-coral-700 focus:ring-4 focus:ring-coral-500/30 transition-all shadow-xl shadow-coral-500/25 hover:shadow-coral-500/40 hover:-translate-y-0.5 flex items-center justify-center gap-3"
+      >
+        Send Enquiry
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+
+      <!-- Trust signals -->
+      <div class="mt-8 pt-8 border-t border-sand-200">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-night-500">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-lagoon-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            <span>Secure & Private</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-coral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>24hr Response</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-sand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <span>Local Expertise</span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</BaseLayout>
+
+<script>
+  // Set minimum date to today
+  const today = new Date().toISOString().split('T')[0];
+  const checkIn = document.getElementById('check-in') as HTMLInputElement;
+  const checkOut = document.getElementById('check-out') as HTMLInputElement;
+
+  if (checkIn && checkOut) {
+    checkIn.min = today;
+
+    checkIn.addEventListener('change', () => {
+      const selectedDate = new Date(checkIn.value);
+      selectedDate.setDate(selectedDate.getDate() + 1);
+      checkOut.min = selectedDate.toISOString().split('T')[0];
+
+      if (checkOut.value && new Date(checkOut.value) <= new Date(checkIn.value)) {
+        checkOut.value = '';
+      }
+    });
+  }
+</script>
+
+<script>
+  // Set minimum date to today
+  const today = new Date().toISOString().split('T')[0];
+  const checkIn = document.getElementById('check-in') as HTMLInputElement;
+  const checkOut = document.getElementById('check-out') as HTMLInputElement;
+
+  if (checkIn && checkOut) {
+    checkIn.min = today;
+
+    checkIn.addEventListener('change', () => {
+      const selectedDate = new Date(checkIn.value);
+      selectedDate.setDate(selectedDate.getDate() + 1);
+      checkOut.min = selectedDate.toISOString().split('T')[0];
+
+      if (checkOut.value && new Date(checkOut.value) <= new Date(checkIn.value)) {
+        checkOut.value = '';
+      }
+    });
+  }
+</script>
