@@ -1,3 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text y=".9em" font-size="90">🌴</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="coral-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f08b66"/>
+      <stop offset="100%" style="stop-color:#d4502a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="12" cy="12" r="11" fill="url(#coral-gradient)"/>
+  <g fill="white">
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(51.4 12 12)"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(102.9 12 12)"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(154.3 12 12)"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(205.7 12 12)"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(257.1 12 12)"/>
+    <path d="M12 4C11.2 4.5 11 6.5 11.5 8.5C11.7 9.2 12 9.5 12 9.5S12.3 9.2 12.5 8.5C13 6.5 12.8 4.5 12 4Z" transform="rotate(308.6 12 12)"/>
+    <circle cx="12" cy="12" r="2"/>
+  </g>
 </svg>
