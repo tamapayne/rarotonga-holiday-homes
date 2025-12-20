@@ -26,7 +26,6 @@ const {
   images,
   amenities,
   highlights,
-  host,
   houseRules,
   safety,
   coordinates,
@@ -199,32 +198,6 @@ const {
           <p class="text-sm text-night-400 text-center mb-6">
             We typically respond within 24 hours
           </p>
-
-          <!-- Host Info -->
-          {host && (
-            <div class="pt-6 border-t border-sand-200">
-              <h3 class="font-display font-semibold text-night-900 mb-4">Your Host</h3>
-              <div class="flex items-start gap-4">
-                <div class="w-14 h-14 bg-gradient-to-br from-sand-300 to-sand-400 rounded-full flex items-center justify-center">
-                  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-night-900 font-semibold text-lg">{host.name}</p>
-                  {host.experience && (
-                    <p class="text-sm text-night-500">{host.experience}</p>
-                  )}
-                  {host.responseRate && (
-                    <p class="text-sm text-night-500 mt-2 flex items-center gap-2">
-                      <span class="w-2 h-2 bg-lagoon-500 rounded-full"></span>
-                      <span class="text-lagoon-600 font-medium">{host.responseRate}</span> response rate
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </aside>
     </div>
