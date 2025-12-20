@@ -8,10 +8,10 @@ bathrooms: 1
 price: 200
 priceNote: "Studio bungalow with queen bed and couch"
 featured: true
-featuredImage: "/images/tavake-beachfront-bungalow/beach-1.avif"
+featuredImage: "/images/tavake-beachfront-bungalow/exterior-2.avif"
 images:
-  - "/images/tavake-beachfront-bungalow/beach-1.avif"
   - "/images/tavake-beachfront-bungalow/exterior-2.avif"
+  - "/images/tavake-beachfront-bungalow/beach-1.avif"
   - "/images/tavake-beachfront-bungalow/beach-2.avif"
   - "/images/tavake-beachfront-bungalow/beach-3.avif"
   - "/images/tavake-beachfront-bungalow/view-1.avif"
