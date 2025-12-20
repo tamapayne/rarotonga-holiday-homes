@@ -57,6 +57,45 @@ checkIn: "2:00 PM"
 safety:
   - "Carbon monoxide alarm"
   - "Nearby water body (lagoon)"
+coordinates:
+  lat: -21.2555
+  lng: -159.7295
+nearbyAttractions:
+  - name: "Captain Tama's Lagoon Cruises"
+    type: "attraction"
+    distance: "2 min walk"
+    coordinates:
+      lat: -21.2567
+      lng: -159.7319
+    description: "Kayak and SUP board rentals, lagoon tours"
+  - name: "Muri Beach Club Hotel"
+    type: "restaurant"
+    distance: "3 min walk"
+    coordinates:
+      lat: -21.2555
+      lng: -159.7295
+    description: "Beachfront dining and cafe"
+  - name: "Tikioki Marine Reserve"
+    type: "attraction"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2650
+      lng: -159.7250
+    description: "Excellent snorkeling at Fruits of Rarotonga"
+  - name: "Rarotonga International Airport"
+    type: "airport"
+    distance: "15 min drive"
+    coordinates:
+      lat: -21.2027
+      lng: -159.8057
+    description: "Main airport serving the Cook Islands"
+  - name: "Avarua Town Center"
+    type: "shopping"
+    distance: "15 min drive"
+    coordinates:
+      lat: -21.2078
+      lng: -159.7750
+    description: "Main township with shops and restaurants"
 ---
 
 Tavake Beachfront Bungalow is a fully self-contained studio bungalow located on the western edge of Muri Beach, one of Rarotonga's most iconic destinations. This intimate property offers the perfect escape for couples or solo travelers seeking a beachfront experience with easy access to local amenities and water activities. Wake up to the gentle sounds of lapping waves just feet away from your private bungalow with spectacular lagoon views—pure bliss.

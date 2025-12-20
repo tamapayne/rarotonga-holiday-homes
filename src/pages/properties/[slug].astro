@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ImageGallery from '../../components/ImageGallery.astro';
+import PropertyMap from '../../components/PropertyMap.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -28,6 +29,8 @@ const {
   host,
   houseRules,
   safety,
+  coordinates,
+  nearbyAttractions,
 } = property.data;
 ---
 
@@ -225,6 +228,15 @@ const {
         </div>
       </aside>
     </div>
+
+    <!-- Location & Map -->
+    {coordinates && (
+      <PropertyMap
+        coordinates={coordinates}
+        propertyName={name}
+        nearbyAttractions={nearbyAttractions}
+      />
+    )}
 
     <!-- Back Link -->
     <div class="mt-16 pt-8 border-t border-sand-200">

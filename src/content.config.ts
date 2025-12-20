@@ -25,6 +25,20 @@ const properties = defineCollection({
     houseRules: z.array(z.string()).optional(),
     checkIn: z.string().optional(),
     safety: z.array(z.string()).optional(),
+    coordinates: z.object({
+      lat: z.number(),
+      lng: z.number(),
+    }).optional(),
+    nearbyAttractions: z.array(z.object({
+      name: z.string(),
+      type: z.enum(['beach', 'restaurant', 'attraction', 'shopping', 'airport', 'landmark']),
+      distance: z.string(),
+      coordinates: z.object({
+        lat: z.number(),
+        lng: z.number(),
+      }),
+      description: z.string().optional(),
+    })).optional(),
   }),
 });
 

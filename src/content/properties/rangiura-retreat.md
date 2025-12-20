@@ -49,6 +49,45 @@ checkIn: "2:00 PM"
 safety:
   - "Smoke alarm"
   - "Exterior security cameras on property"
+coordinates:
+  lat: -21.2075
+  lng: -159.7767
+nearbyAttractions:
+  - name: "Rarotonga International Airport"
+    type: "airport"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2027
+      lng: -159.8057
+    description: "Main airport serving the Cook Islands"
+  - name: "Avarua Town Center"
+    type: "shopping"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2078
+      lng: -159.7750
+    description: "Main township with shops, restaurants, and markets"
+  - name: "Punanga Nui Market"
+    type: "attraction"
+    distance: "7 min drive"
+    coordinates:
+      lat: -21.2052
+      lng: -159.7830
+    description: "Saturday morning market with local crafts and food"
+  - name: "Trader Jacks"
+    type: "restaurant"
+    distance: "8 min drive"
+    coordinates:
+      lat: -21.2061
+      lng: -159.7748
+    description: "Popular waterfront restaurant and bar"
+  - name: "Muri Beach"
+    type: "beach"
+    distance: "10 min drive"
+    coordinates:
+      lat: -21.2568
+      lng: -159.7304
+    description: "Popular beach with lagoon and water sports"
 ---
 
 Rangiura Retreat is a private tropical oasis offering the perfect blend of privacy and luxury in Polynesian living. This stunning 3-bedroom home features a swimming pool and expansive covered deck, ideal for relaxing and enjoying the natural beauty of Rarotonga. Nestled within a lush tropical garden, the property boasts an elevated, north-facing aspect that captures all-day sun, allowing guests to enjoy unimpeded views across the coastal plain towards the Pacific Ocean from the main deck.

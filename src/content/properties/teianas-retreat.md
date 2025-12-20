@@ -63,6 +63,45 @@ houseRules:
 checkIn: "2:00 PM"
 safety:
   - "Smoke alarm"
+coordinates:
+  lat: -21.2068
+  lng: -159.7785
+nearbyAttractions:
+  - name: "Black Rock Beach"
+    type: "beach"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2079
+      lng: -159.8237
+    description: "Popular beach for swimming and amazing sunsets"
+  - name: "Rarotonga International Airport"
+    type: "airport"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2027
+      lng: -159.8057
+    description: "Main airport serving the Cook Islands"
+  - name: "Avarua Town Center"
+    type: "shopping"
+    distance: "5 min drive"
+    coordinates:
+      lat: -21.2078
+      lng: -159.7750
+    description: "Main township with shops and restaurants"
+  - name: "Punanga Nui Market"
+    type: "attraction"
+    distance: "7 min drive"
+    coordinates:
+      lat: -21.2052
+      lng: -159.7830
+    description: "Saturday morning market with local crafts and food"
+  - name: "Muri Beach"
+    type: "beach"
+    distance: "15 min drive"
+    coordinates:
+      lat: -21.2568
+      lng: -159.7304
+    description: "Beautiful lagoon beach with water sports"
 ---
 
 Teiana's Retreat is a modern, fully self-contained unit offering a peaceful oasis away from the hustle and bustle. Located in a tropical garden setting with ocean views, this property provides the perfect blend of comfort and tranquility for a relaxing island getaway. Ideal for couples or small groups, the retreat features a king-size bed (which can be split into two singles), air conditioning, and a spacious living area with a sofa that folds out to accommodate an additional guest.
