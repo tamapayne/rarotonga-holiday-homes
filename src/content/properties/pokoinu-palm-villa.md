@@ -9,15 +9,16 @@ price: 250
 priceNote: ""
 featured: true
 featuredImage: "/images/pokoinu-palm-villa/living-room-1.jpeg"
+video: "/videos/pokoinu-palm-villa/tour.mp4"
 images:
-  - "/images/pokoinu-palm-villa/living-room-1.jpeg"
+  - "/images/pokoinu-palm-villa/porch-1.jpeg"
   - "/images/pokoinu-palm-villa/living-room-2.jpeg"
   - "/images/pokoinu-palm-villa/living-room-3.jpeg"
   - "/images/pokoinu-palm-villa/dining-room-1.jpeg"
   - "/images/pokoinu-palm-villa/dining-room-2.jpeg"
   - "/images/pokoinu-palm-villa/bedroom-1.jpeg"
   - "/images/pokoinu-palm-villa/bedroom-2.jpeg"
-  - "/images/pokoinu-palm-villa/porch-1.jpeg"
+  - "/images/pokoinu-palm-villa/living-room-1.jpeg"
 amenities:
   - "WiFi"
   - "Fans"

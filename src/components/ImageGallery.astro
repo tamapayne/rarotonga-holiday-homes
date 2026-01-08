@@ -2,51 +2,104 @@
 interface Props {
   images: string[];
   propertyName: string;
+  video?: string;
 }
 
-const { images, propertyName } = Astro.props;
+const { images, propertyName, video } = Astro.props;
 const mainImage = images[0];
-const thumbnails = images.slice(1, 5);
-const remainingCount = images.length - 5;
+const posterImage = images[0]; // Use first image as video poster
+const thumbnails = video ? images.slice(0, 4) : images.slice(1, 5);
+const remainingCount = video ? images.length - 4 : images.length - 5;
+const hasVideo = !!video;
 ---
 
 <div class="image-gallery">
   <!-- Desktop Grid Layout -->
   <div class="hidden md:grid md:grid-cols-4 md:grid-rows-2 gap-2 rounded-xl overflow-hidden h-[500px]">
     <div class="col-span-2 row-span-2 relative">
-      <img
-        src={mainImage}
-        alt={`${propertyName} - Main image`}
-        class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
-        data-gallery-trigger
-        data-index="0"
-      />
-    </div>
-    {thumbnails.map((image, index) => (
-      <div class="relative">
+      {hasVideo ? (
+        <div class="relative w-full h-full cursor-pointer group" data-video-trigger>
+          <img
+            src={posterImage}
+            alt={`${propertyName} - Video`}
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+            <div class="w-20 h-20 bg-coral-500 rounded-full flex items-center justify-center shadow-xl shadow-coral-500/30 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-white text-sm font-medium flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+            </svg>
+            Watch Video
+          </div>
+        </div>
+      ) : (
         <img
-          src={image}
-          alt={`${propertyName} - Image ${index + 2}`}
+          src={mainImage}
+          alt={`${propertyName} - Main image`}
           class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
           data-gallery-trigger
-          data-index={index + 1}
+          data-index="0"
         />
-        {index === 3 && remainingCount > 0 && (
-          <div
-            class="absolute inset-0 bg-black/50 flex items-center justify-center cursor-pointer hover:bg-black/60 transition-colors"
+      )}
+    </div>
+    {thumbnails.map((image, index) => {
+      const imageIndex = hasVideo ? index : index + 1;
+      return (
+        <div class="relative">
+          <img
+            src={image}
+            alt={`${propertyName} - Image ${imageIndex + 1}`}
+            class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
             data-gallery-trigger
-            data-index={index + 1}
-          >
-            <span class="text-white font-semibold text-lg">+{remainingCount} more</span>
-          </div>
-        )}
-      </div>
-    ))}
+            data-index={imageIndex}
+          />
+          {index === 3 && remainingCount > 0 && (
+            <div
+              class="absolute inset-0 bg-black/50 flex items-center justify-center cursor-pointer hover:bg-black/60 transition-colors"
+              data-gallery-trigger
+              data-index={imageIndex}
+            >
+              <span class="text-white font-semibold text-lg">+{remainingCount} more</span>
+            </div>
+          )}
+        </div>
+      );
+    })}
   </div>
 
   <!-- Mobile Slider -->
   <div class="md:hidden relative">
     <div class="overflow-x-auto snap-x snap-mandatory flex gap-2 pb-4 scrollbar-hide">
+      {hasVideo && (
+        <div class="flex-shrink-0 w-[85vw] snap-center">
+          <div class="relative w-full h-64 rounded-lg overflow-hidden cursor-pointer group" data-video-trigger>
+            <img
+              src={posterImage}
+              alt={`${propertyName} - Video`}
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+              <div class="w-16 h-16 bg-coral-500 rounded-full flex items-center justify-center shadow-xl shadow-coral-500/30">
+                <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 px-2.5 py-1 bg-black/60 backdrop-blur-sm rounded-full text-white text-xs font-medium flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+              </svg>
+              Video
+            </div>
+          </div>
+        </div>
+      )}
       {images.map((image, index) => (
         <div class="flex-shrink-0 w-[85vw] snap-center">
           <img
@@ -60,7 +113,7 @@ const remainingCount = images.length - 5;
       ))}
     </div>
     <div class="text-center text-sm text-gray-500 mt-2">
-      Swipe to see more photos
+      {hasVideo ? 'Swipe to see video & photos' : 'Swipe to see more photos'}
     </div>
   </div>
 
@@ -98,6 +151,19 @@ const remainingCount = images.length - 5;
       class="max-h-[90vh] max-w-[90vw] object-contain"
     />
 
+    {/* Video player for lightbox - hidden by default */}
+    {hasVideo && (
+      <video
+        id="lightbox-video"
+        class="hidden max-h-[90vh] max-w-[90vw] rounded-2xl"
+        controls
+        playsinline
+      >
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )}
+
     <button
       id="lightbox-next"
       class="absolute right-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors"
@@ -114,19 +180,46 @@ const remainingCount = images.length - 5;
   </div>
 </div>
 
-<script define:vars={{ images, propertyName }}>
+<script define:vars={{ images, propertyName, hasVideo }}>
   let currentIndex = 0;
+  let isShowingVideo = false;
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
+  const lightboxVideo = document.getElementById('lightbox-video');
   const lightboxCounter = document.getElementById('lightbox-counter');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
   const triggers = document.querySelectorAll('[data-gallery-trigger]');
+  const videoTriggers = document.querySelectorAll('[data-video-trigger]');
+
+  function showVideoInLightbox() {
+    isShowingVideo = true;
+    if (lightboxImage) lightboxImage.classList.add('hidden');
+    if (lightboxVideo) {
+      lightboxVideo.classList.remove('hidden');
+      lightboxVideo.currentTime = 0;
+    }
+    if (lightboxCounter) lightboxCounter.classList.add('hidden');
+    if (prevBtn) prevBtn.classList.add('hidden');
+    if (nextBtn) nextBtn.classList.add('hidden');
+    lightbox?.classList.remove('hidden');
+    lightbox?.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
 
   function openLightbox(index) {
+    isShowingVideo = false;
     currentIndex = index;
+    if (lightboxVideo) {
+      lightboxVideo.classList.add('hidden');
+      lightboxVideo.pause();
+    }
+    if (lightboxImage) lightboxImage.classList.remove('hidden');
+    if (lightboxCounter) lightboxCounter.classList.remove('hidden');
+    if (prevBtn) prevBtn.classList.remove('hidden');
+    if (nextBtn) nextBtn.classList.remove('hidden');
     updateLightbox();
     lightbox?.classList.remove('hidden');
     lightbox?.classList.add('flex');
@@ -137,6 +230,10 @@ const remainingCount = images.length - 5;
     lightbox?.classList.add('hidden');
     lightbox?.classList.remove('flex');
     document.body.style.overflow = '';
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+    }
+    isShowingVideo = false;
   }
 
   function updateLightbox() {
@@ -150,11 +247,13 @@ const remainingCount = images.length - 5;
   }
 
   function nextImage() {
+    if (isShowingVideo) return;
     currentIndex = (currentIndex + 1) % images.length;
     updateLightbox();
   }
 
   function prevImage() {
+    if (isShowingVideo) return;
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateLightbox();
   }
@@ -163,6 +262,12 @@ const remainingCount = images.length - 5;
     trigger.addEventListener('click', () => {
       const index = parseInt(trigger.dataset.index || '0');
       openLightbox(index);
+    });
+  });
+
+  videoTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      showVideoInLightbox();
     });
   });
 

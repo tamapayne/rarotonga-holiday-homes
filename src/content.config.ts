@@ -14,6 +14,7 @@ const properties = defineCollection({
     priceNote: z.string().optional(),
     featured: z.boolean().default(false),
     featuredImage: z.string(),
+    video: z.string().optional(),
     images: z.array(z.string()),
     amenities: z.array(z.string()),
     highlights: z.array(z.string()).optional(),

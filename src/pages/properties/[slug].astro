@@ -23,6 +23,7 @@ const {
   bathrooms,
   price,
   priceNote,
+  video,
   images,
   amenities,
   highlights,
@@ -36,7 +37,7 @@ const {
 <BaseLayout title={name} description={`Book ${name} in ${location}. ${type} for up to ${capacity} guests.`}>
   <article class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Image Gallery -->
-    <ImageGallery images={images} propertyName={name} />
+    <ImageGallery images={images} propertyName={name} video={video} />
 
     <div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
       <!-- Main Content -->
