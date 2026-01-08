@@ -5,18 +5,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="About Us | Rarotonga Holiday Homes" description="We're a Cook Islands family helping you discover authentic Rarotonga. Learn about our story and why booking with us supports local families.">
   <!-- Hero Section -->
   <section class="relative min-h-[70vh] flex items-center overflow-hidden">
-    <!-- Layered gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-night-900 via-night-800 to-lagoon-900"></div>
-
-    <!-- Decorative blobs -->
-    <div class="absolute inset-0 opacity-30">
-      <div class="absolute top-10 right-20 w-72 h-72 bg-coral-500 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 left-10 w-80 h-80 bg-lagoon-500 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/3 w-96 h-96 bg-sand-500 rounded-full blur-3xl opacity-20"></div>
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="/rarotonga-whole-island.jpg"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover"
+      />
     </div>
 
-    <!-- Subtle pattern overlay -->
-    <div class="absolute inset-0 texture-overlay opacity-50"></div>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-br from-night-900/80 via-night-800/70 to-lagoon-900/75"></div>
+
+    <!-- Decorative blobs -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-10 right-20 w-72 h-72 bg-coral-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-10 w-80 h-80 bg-lagoon-500 rounded-full blur-3xl"></div>
+    </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
       <div class="max-w-3xl">
@@ -27,11 +33,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <h1 class="animate-on-load animate-fade-up stagger-2 font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          Our Roots Run <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-300 to-coral-500">Deep</span> in These Islands
+          A Family Run Business From Right Here in <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-300 to-coral-500">Rarotonga</span>
         </h1>
 
         <p class="animate-on-load animate-fade-up stagger-3 text-lg md:text-xl text-sand-200 leading-relaxed max-w-2xl">
-          We're a Cook Islands family helping you discover authentic Rarotonga—the way it's meant to be experienced. Not through a faceless platform, but through people who call this paradise home.
+          We’re a Cook Islands family helping you find accomodation here in Rarotonga. We are proud to support local home owners by listing their properties online. With more than 25 years experience in the property management market, we have a passion for great service. 
         </p>
       </div>
     </div>
@@ -54,18 +60,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <span class="inline-block text-coral-600 font-semibold text-sm tracking-widest uppercase mb-4">Our Journey</span>
           <h2 class="font-display text-3xl md:text-4xl font-bold text-night-900 mb-8">
-            From Family Roots to Your Island Welcome
+            From Helping Friends to Your Island Welcome
           </h2>
 
           <div class="space-y-6 text-night-600 leading-relaxed">
             <p>
-              Like many Cook Islanders, our family's story spans oceans. Though life took us to different shores, our hearts never left these islands. Rarotonga isn't just where we're from—it's who we are.
+              It started simply: helping friends and family manage their homes when visitor’s came looking for somewhere to stay. 
             </p>
             <p>
-              It started simply: helping aunties and uncles manage their homes when visitors came looking for somewhere to stay. Word spread. Friends of friends reached out. We saw travelers struggling to find quality accommodations they could trust—places that weren't just listings on a screen, but real homes with real people behind them.
-            </p>
-            <p>
-              So we built this. A way to connect visitors with carefully chosen island homes, while ensuring the benefits stay right here—with the families who make Rarotonga the special place it is.
+              Now we help promote local homes online - by connecting visitors with carefully chosen island homes, while ensuring the benefits stay right here - with the families who make Rarotonga the special place it is.
             </p>
           </div>
         </div>
@@ -87,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
                 <div class="pb-8">
                   <h3 class="font-display font-semibold text-night-900 text-lg mb-2">Cook Islands Heritage</h3>
-                  <p class="text-night-500 text-sm leading-relaxed">Born from generations of connection to these islands and the ocean that surrounds them.</p>
+                  <p class="text-night-500 text-sm leading-relaxed">We live right here in Nikao, Rarotonga and enjoy supporting our local community.</p>
                 </div>
               </div>
 
@@ -102,8 +105,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <div class="w-0.5 h-full bg-gradient-to-b from-coral-400 to-sand-400 mt-2"></div>
                 </div>
                 <div class="pb-8">
-                  <h3 class="font-display font-semibold text-night-900 text-lg mb-2">Helping Family First</h3>
-                  <p class="text-night-500 text-sm leading-relaxed">Started managing properties for aunties, uncles, and friends—keeping their homes cared for while they welcomed guests.</p>
+                  <h3 class="font-display font-semibold text-night-900 text-lg mb-2">Helping Friends & Family First</h3>
+                  <p class="text-night-500 text-sm leading-relaxed">Started managing properties for friends and family - keeping their homes cared for while they welcomed guests. </p>
                 </div>
               </div>
 
@@ -118,7 +121,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
                 <div>
                   <h3 class="font-display font-semibold text-night-900 text-lg mb-2">Growing Together</h3>
-                  <p class="text-night-500 text-sm leading-relaxed">Now we connect travelers with the best local homes—supporting our community while sharing the magic of Rarotonga.</p>
+                  <p class="text-night-500 text-sm leading-relaxed">Now we connect travelers with the best local homes - supporting our community while sharing the magic of Rarotonga.</p>
                 </div>
               </div>
             </div>
@@ -260,12 +263,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- Community Impact Section -->
   <section class="relative py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-night-900 via-night-800 to-lagoon-900"></div>
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-20 left-20 w-64 h-64 bg-coral-500 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-20 right-20 w-80 h-80 bg-lagoon-500 rounded-full blur-3xl"></div>
-    </div>
-    <div class="absolute inset-0 texture-overlay opacity-50"></div>
+    <div class="absolute inset-0 bg-night-900"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -469,19 +467,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- CTA Section -->
   <section class="relative py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-coral-600 via-coral-500 to-sand-500"></div>
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="/lagoon-cook-islands.jpg"
+        alt=""
+        role="presentation"
+        class="w-full h-full object-cover"
+      />
+    </div>
 
-    <div class="absolute inset-0 opacity-30">
-      <div class="absolute -top-20 -left-20 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+    <!-- Dark overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-br from-night-900/70 via-night-800/60 to-lagoon-900/70"></div>
+
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute -top-20 -left-20 w-80 h-80 bg-coral-400 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-lagoon-400 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-        Ready to Experience Real Rarotonga?
+        Ready to Experience Rarotonga?
       </h2>
       <p class="text-white/90 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-        Browse our handpicked homes or reach out—we'd love to help plan your island escape.
+        Browse our handpicked homes or reach out - we'd love to help plan your island escape.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
