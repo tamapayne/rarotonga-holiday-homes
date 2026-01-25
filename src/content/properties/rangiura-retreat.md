@@ -5,7 +5,7 @@ type: "Entire home"
 capacity: 6
 bedrooms: 3
 bathrooms: 2
-price: 250
+price: 400
 priceNote: "First 2 guests included, additional guests $50 per person per night"
 featured: true
 featuredImage: "/images/rangiura-retreat/swimming-pool.avif"
