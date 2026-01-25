@@ -113,8 +113,18 @@ const {
         )}
 
         <!-- Description -->
-        <section class="prose prose-lg prose-night max-w-none mb-10 text-night-600 leading-relaxed description-content">
-          <Content />
+        <section class="mb-10">
+          <div id="description-container" class="prose prose-lg prose-night max-w-none text-night-600 leading-relaxed description-content">
+            <div id="description-full">
+              <Content />
+            </div>
+          </div>
+          <button
+            id="read-more-btn"
+            class="hidden mt-4 text-coral-600 hover:text-coral-700 font-semibold transition-colors"
+          >
+            Read more
+          </button>
         </section>
 
         <!-- Amenities -->
@@ -236,3 +246,35 @@ const {
     margin-bottom: 0;
   }
 </style>
+
+<script>
+  const WORD_LIMIT = 75;
+  const fullContainer = document.getElementById('description-full');
+  const readMoreBtn = document.getElementById('read-more-btn');
+
+  if (fullContainer && readMoreBtn) {
+    const fullHTML = fullContainer.innerHTML;
+    const textContent = fullContainer.textContent || '';
+    const words = textContent.trim().split(/\s+/);
+
+    if (words.length > WORD_LIMIT) {
+      const truncatedWords = words.slice(0, WORD_LIMIT).join(' ');
+      const truncatedHTML = `<p>${truncatedWords}...</p>`;
+
+      let isExpanded = false;
+      fullContainer.innerHTML = truncatedHTML;
+      readMoreBtn.classList.remove('hidden');
+
+      readMoreBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded;
+        if (isExpanded) {
+          fullContainer.innerHTML = fullHTML;
+          readMoreBtn.textContent = 'Read less';
+        } else {
+          fullContainer.innerHTML = truncatedHTML;
+          readMoreBtn.textContent = 'Read more';
+        }
+      });
+    }
+  }
+</script>
