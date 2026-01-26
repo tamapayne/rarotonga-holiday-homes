@@ -38,8 +38,6 @@ amenities:
   - "Ceramic cooktop"
   - "Kettle"
 highlights:
-  - "Top 5% of Homes - highly ranked for ratings and reliability"
-  - "Guest Favourite - Rated 4.97 out of 5 stars"
   - "Direct beach access with spectacular lagoon views"
   - "Self Check-in via key safe for convenience"
   - "Beautiful beachfront location on Muri Beach"
@@ -68,20 +66,41 @@ nearbyAttractions:
       lat: -21.2567
       lng: -159.7319
     description: "Kayak and SUP board rentals, lagoon tours"
-  - name: "Muri Beach Club Hotel"
-    type: "restaurant"
-    distance: "3 min walk"
+  - name: "Koka Lagoon Cruises"
+    type: "attraction"
+    distance: "2 min walk"
     coordinates:
-      lat: -21.2555
-      lng: -159.7295
-    description: "Beachfront dining and cafe"
+      lat: -21.258422421930966
+      lng: -159.73132089679552
+    description: "A glass bottom cruise of Muri Lagoon"
   - name: "Tikioki Marine Reserve"
     type: "attraction"
-    distance: "5 min drive"
+    distance: "5 min walk"
     coordinates:
       lat: -21.2650
       lng: -159.7250
     description: "Excellent snorkeling at Fruits of Rarotonga"
+  - name: "Saigon Shack"
+    type: "restaurant"
+    distance: "7 min walk"
+    coordinates:
+      lat: -21.265230925195414
+      lng: -159.73541203355762
+    description: "Popular destination for authentic Vietnamese food"
+  - name: "Coffee & Crepes Station"
+    type: "restaurant"
+    distance: "7 min walk"
+    coordinates:
+      lat: -21.26516272512593
+      lng: -159.73534177588476
+    description: "Sweet crepes & coffee"
+  - name: "Beach Hut"
+    type: "restaurant"
+    distance: "6 min walk"
+    coordinates:
+      lat: -21.26327113096599
+      lng: -159.7342889139963
+    description: "Authentic polynesian food on the beach"
   - name: "Rarotonga International Airport"
     type: "airport"
     distance: "15 min drive"

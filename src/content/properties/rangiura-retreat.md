@@ -81,6 +81,13 @@ nearbyAttractions:
       lat: -21.2061
       lng: -159.7748
     description: "Popular waterfront restaurant and bar"
+  - name: "Nikao Social Centre"
+    type: "beach"
+    distance: "11 min drive"
+    coordinates:
+      lat: -21.205308906321765
+      lng: -159.82038258078526
+    description: "Popular beach with local food and coffee trucks"
   - name: "Muri Beach"
     type: "beach"
     distance: "10 min drive"
