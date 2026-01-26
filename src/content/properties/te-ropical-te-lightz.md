@@ -61,7 +61,7 @@ nearbyAttractions:
       lng: -159.7320
     description: "Famous turquoise lagoon perfect for swimming and kayaking"
   - name: "Muri Night Market"
-    type: "restaurant"
+    type: "attraction"
     distance: "10 min walk"
     coordinates:
       lat: -21.2560

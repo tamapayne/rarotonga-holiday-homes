@@ -1,0 +1,76 @@
+---
+interface Props {
+  showCTA?: boolean;
+}
+
+const { showCTA = false } = Astro.props;
+---
+
+<section class="py-20 md:py-28 bg-sand-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block text-coral-600 font-semibold text-sm tracking-widest uppercase mb-4">Why Choose Us</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-night-900">
+        The Rarotonga Experience
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-xl shadow-night-900/5 hover:shadow-2xl hover:shadow-coral-500/10 transition-all duration-500 hover:-translate-y-2">
+        <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <!-- Hibiscus flower -->
+            <path d="M12 12c-1.5-3-1-6 1-8 2 2 2.5 5 1 8m0 0c3-1.5 6-1 8 1-2 2-5 2.5-8 1m0 0c1.5 3 1 6-1 8-2-2-2.5-5-1-8m0 0c-3 1.5-6 1-8-1 2-2 5-2.5 8-1" />
+            <path d="M12 12c-2.1-2.1-2.1-5.5 0-7.6 2.1 2.1 2.1 5.5 0 7.6m0 0c2.1 2.1 5.5 2.1 7.6 0-2.1-2.1-5.5-2.1-7.6 0m0 0c2.1 2.1 2.1 5.5 0 7.6-2.1-2.1-2.1-5.5 0-7.6m0 0c-2.1-2.1-5.5-2.1-7.6 0 2.1 2.1 5.5 2.1 7.6 0" />
+            <circle cx="12" cy="12" r="2" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-night-900 mb-3">Locally Operated</h3>
+        <p class="text-night-500 leading-relaxed">
+          A proudly Cook Island owned business operated from right here in Rarotonga.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-xl shadow-night-900/5 hover:shadow-2xl hover:shadow-coral-500/10 transition-all duration-500 hover:-translate-y-2">
+        <div class="w-16 h-16 bg-gradient-to-br from-coral-400 to-coral-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-coral-500/30 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-night-900 mb-3">Local Hospitality</h3>
+        <p class="text-night-500 leading-relaxed">
+          With extensive experience in hospitality, we work hard to make your stay as comfortable as possible. 
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-xl shadow-night-900/5 hover:shadow-2xl hover:shadow-coral-500/10 transition-all duration-500 hover:-translate-y-2">
+        <div class="w-16 h-16 bg-gradient-to-br from-sand-400 to-sand-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-sand-500/30 group-hover:scale-110 transition-transform">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl text-night-900 mb-3">Quality Assured</h3>
+        <p class="text-night-500 leading-relaxed">
+          Carefully selected properties with modern amenities in the most beautiful locations.
+        </p>
+      </div>
+    </div>
+
+    {showCTA && (
+      <div class="text-center mt-16">
+        <a
+          href="/#properties"
+          class="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-coral-500 to-coral-600 text-white font-semibold rounded-full hover:from-coral-600 hover:to-coral-700 transition-all shadow-2xl shadow-coral-500/30 hover:shadow-coral-500/50 hover:-translate-y-1"
+        >
+          Explore All Properties
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    )}
+  </div>
+</section>
