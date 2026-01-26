@@ -23,7 +23,7 @@ const apiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
 // Icon paths for different attraction types
 const categoryIcons: Record<string, string> = {
   beach: 'M2 10q4-4 8 0t8 0M2 16q4-4 8 0t8 0',
-  restaurant: 'M8 2v14m8-14v6a2 2 0 01-2 2H8',
+  restaurant: 'M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
   attraction: 'M12 2l3.1 6.3 6.9.9-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z',
   shopping: 'M4 4h2l3.5 10h7l3-7H7.5M10 20a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4z',
   airport: 'M21 12l-18 6v-4l14-2-14-2V6l18 6z',
@@ -86,7 +86,7 @@ const categoryIcons: Record<string, string> = {
   function getCategoryIconPath(type) {
     const paths = {
       beach: '2 10q4-4 8 0t8 0M2 16q4-4 8 0t8 0',
-      restaurant: '8 2v14m8-14v6a2 2 0 01-2 2H8',
+      restaurant: '11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z',
       attraction: '12 2l3.1 6.3 6.9.9-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3 1.2-6.9-5-4.9 6.9-.9z',
       shopping: '4 4h2l3.5 10h7l3-7H7.5M10 20a2 2 0 110-4 2 2 0 010 4zm6 0a2 2 0 110-4 2 2 0 010 4z',
       airport: '21 12l-18 6v-4l14-2-14-2V6l18 6z',
