@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "Holiday home booking website for Rarotonga",
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.2",
     "@googlemaps/js-api-loader": "^2.0.2",
     "astro": "^5.16.4",
