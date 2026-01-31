@@ -20,7 +20,8 @@ interface Props {
 
 const { title, description = 'Discover beautiful holiday homes in Rarotonga, Cook Islands. Book your tropical paradise escape today.' } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalURL = new URL(pathname, Astro.site);
 ---
 
 <!doctype html>
