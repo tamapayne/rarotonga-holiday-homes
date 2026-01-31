@@ -5,8 +5,8 @@ type: "Entire home"
 capacity: 6
 bedrooms: 3
 bathrooms: 2
-price: 500
-priceNote: ""
+price: 425
+priceNote: "First 2 guests included, additional guests $60 per person per night"
 featured: false
 featuredImage: "/images/te-are-anau/pool-1.jpeg"
 video: ""
@@ -45,7 +45,7 @@ host:
   experience: "Superhost"
 houseRules:
   - "Check-in after 2:00 PM"
-  - "8 guests maximum"
+  - "6 guests maximum"
   - "No smoking indoors"
   - "No parties or events"
 checkIn: "2:00 PM"

@@ -20,7 +20,6 @@ images:
   - "/images/are-ariki/bedroom-2.avif"
   - "/images/are-ariki/bedroom-3.avif"
   - "/images/are-ariki/bathroom-1.avif"
-  - "/images/are-ariki/bathroom-3.avif"
   - "/images/are-ariki/deck-1.avif"
   - "/images/are-ariki/deck-2.avif"
   - "/images/are-ariki/deck-3.avif"
