@@ -37,6 +37,7 @@ amenities:
 highlights:
   - "One of the few places with a pool in the area"
   - "Exceptional check-in experience"
+  - "Self check in via key safe for convenience"
 host:
   name: "Lynn"
   experience: "3 years of hosting"
@@ -90,7 +91,7 @@ nearbyAttractions:
     description: "Popular beach with local food and coffee trucks"
   - name: "Muri Beach"
     type: "beach"
-    distance: "10 min drive"
+    distance: "15 min drive"
     coordinates:
       lat: -21.2568
       lng: -159.7304
@@ -101,10 +102,10 @@ Rangiura Retreat is a private tropical oasis offering the perfect blend of priva
 
 Conveniently located in Avarua, the property places you within just 5 minutes of Rarotonga International Airport, the main township of Avarua, and the nearest swimming beach. This prime location offers both tranquility and accessibility, making it the perfect base for your island adventure.
 
-The accommodation features two spacious main bedrooms, each with king-sized beds and air conditioning units. Both rooms offer breathtaking ocean views and direct access to the main deck, creating a seamless indoor-outdoor living experience. The third bedroom is equipped with a set of bunk beds and a pedestal fan, making it ideal for children. All bedrooms are light and airy, designed to maximize the natural beauty of the surroundings while ensuring your comfort.
+The accommodation features two spacious main bedrooms, each with king-sized beds and air conditioning units. Both rooms offer breathtaking ocean views and direct access to the main deck, creating a seamless indoor-outdoor living experience. The third bedroom is equipped with a set of 2 single beds and a pedestal fan, making it ideal for children. All bedrooms are light and airy, designed to maximize the natural beauty of the surroundings while ensuring your comfort.
 
 Inside, you'll find a fully equipped kitchen perfect for preparing meals, a dining area for family gatherings, and a comfortable lounge room where you can unwind after a day of island exploration. A separate laundry room provides added convenience with a washing machine, tub, ironing facilities, and vacuum, ensuring you have everything you need for an extended stay.
 
-The outdoor living spaces are truly exceptional. The private swimming pool is complemented by a large covered deck, creating the perfect setting for both relaxation and entertainment. BBQ facilities are available on the deck or by the pool, while a dedicated pool house offers bench space, a sink, and a small fridge for your convenience. Whether you're taking a refreshing dip, lounging poolside, or dining al fresco, the outdoor areas provide an idyllic tropical retreat.
+The outdoor living spaces are truly exceptional. The private swimming pool is complemented by a large covered deck, creating the perfect setting for both relaxation and entertainment. BBQ facilities are available on the deck or by the pool, while a dedicated pool house offers bench space, and a sink for your convenience. Whether you're taking a refreshing dip, lounging poolside, or dining al fresco, the outdoor areas provide an idyllic tropical retreat.
 
 Your stay includes complimentary tea, coffee, sugar, milk, bath soap, toilet paper, linen for the duration of your visit, and WiFi internet access. The property is fully wheelchair accessible throughout the house, deck, and pool area, with all spaces thoughtfully designed on one level to ensure easy navigation for all guests.
