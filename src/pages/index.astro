@@ -9,6 +9,17 @@ const properties = await getCollection('properties');
 ---
 
 <BaseLayout title="Holiday Homes in Rarotonga">
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rarotonga Escapes",
+        "url": "https://rarotongaescapes.com"
+      }
+    </script>
+  </Fragment>
+
   <!-- Hero Section with background image -->
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
     <!-- Background image -->

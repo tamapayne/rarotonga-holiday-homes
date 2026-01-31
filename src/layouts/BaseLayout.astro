@@ -8,12 +8,15 @@ interface Props {
 }
 
 const { title, description = 'Discover beautiful holiday homes in Rarotonga, Cook Islands. Book your tropical paradise escape today.' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="canonical" href={canonicalURL.href} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
@@ -25,6 +28,7 @@ const { title, description = 'Discover beautiful holiday homes in Rarotonga, Coo
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Rarotonga Escapes</title>
+    <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-sand-50 text-night-900 font-sans antialiased">
     <Header />
