@@ -49,6 +49,7 @@ highlights:
   - "Extra spacious - guests love the generous room sizes"
   - "Exceptional check-in experience"
   - "Modern and fully self-contained"
+  - "Self check in via key safe for convenience"
 host:
   name: "Lynn"
   experience: "3 years of hosting"
@@ -66,7 +67,7 @@ coordinates:
 nearbyAttractions:
   - name: "Black Rock Beach"
     type: "beach"
-    distance: "5 min drive"
+    distance: "11 min drive"
     coordinates:
       lat: -21.2079
       lng: -159.8237
@@ -107,4 +108,4 @@ Situated inland yet conveniently close to all major attractions, you'll be just 
 
 The accommodation is thoughtfully designed with your comfort in mind. The bedroom features a king-size bed (splittable into singles), air conditioning, and ceiling fan for maximum comfort. A walk-through wardrobe leads to the modern bathroom with shower, toilet, and laundry facilities including a washing machine. The open-plan kitchen and living area provides ample space to prepare meals and relax, with screened sliding doors opening to your private deck overlooking tropical gardens and the ocean beyond.
 
-Your stay includes complimentary WiFi vouchers (available from Vodafone in Avarua), tea, coffee, sugar, milk, bath soap, toilet paper, and fresh linen and towels. Additional amenities include an outdoor clothesline, iron and ironing board, hairdryer, and an informative compendium of island activities. With airport transfers available and hosts who respond within the hour, your tropical escape begins the moment you arrive.
+Your stay includes complimentary tea, coffee, sugar, milk, bath soap, toilet paper, and fresh linen and towels. Additional amenities include an outdoor clothesline, iron and ironing board, hairdryer, and an informative compendium of island activities. With airport transfers available and hosts who respond within the hour, your tropical escape begins the moment you arrive.
