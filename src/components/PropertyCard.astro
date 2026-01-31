@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import { getPropertyImage } from '../utils/images';
+
 interface Props {
   name: string;
   slug: string;
@@ -14,16 +17,26 @@ interface Props {
 const { name, slug, location, featuredImage, capacity, bedrooms, bathrooms, price, amenities } = Astro.props;
 
 const topAmenities = amenities.slice(0, 3);
+const resolvedImage = getPropertyImage(featuredImage);
 ---
 
 <a href={`/properties/${slug}`} class="group block bg-white rounded-2xl overflow-hidden shadow-xl shadow-night-900/5 hover:shadow-2xl hover:shadow-coral-500/10 transition-all duration-500 hover:-translate-y-1">
   <div class="relative aspect-[4/3] overflow-hidden">
-    <img
-      src={featuredImage}
-      alt={name}
-      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-      loading="lazy"
-    />
+    {resolvedImage ? (
+      <Image
+        src={resolvedImage}
+        alt={name}
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+        loading="lazy"
+      />
+    ) : (
+      <img
+        src={featuredImage}
+        alt={name}
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+        loading="lazy"
+      />
+    )}
     <!-- Gradient overlay for depth -->
     <div class="absolute inset-0 bg-gradient-to-t from-night-900/60 via-transparent to-transparent"></div>
 

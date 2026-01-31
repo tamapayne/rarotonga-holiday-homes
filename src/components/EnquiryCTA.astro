@@ -1,12 +1,14 @@
 ---
 // EnquiryCTA - Call-to-action section encouraging visitors to make an enquiry
+import { Image } from 'astro:assets';
+import backgroundImage from '../assets/images/hero/beach-view.jpg';
 ---
 
 <section class="relative py-24 overflow-hidden">
   <!-- Background image -->
   <div class="absolute inset-0">
-    <img
-      src="/beach-view.jpg"
+    <Image
+      src={backgroundImage}
       alt=""
       class="w-full h-full object-cover"
       loading="lazy"

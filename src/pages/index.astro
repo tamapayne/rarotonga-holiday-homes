@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PropertyCard from '../components/PropertyCard.astro';
 import EnquiryCTA from '../components/EnquiryCTA.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
 import { getCollection } from 'astro:content';
+import heroImage from '../assets/images/hero/muri-beach-hero.jpg';
 
 const properties = await getCollection('properties');
 ---
@@ -24,8 +26,8 @@ const properties = await getCollection('properties');
   <section class="relative min-h-[90vh] flex items-center overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img
-        src="/muri-beach-hero.jpg"
+      <Image
+        src={heroImage}
         alt=""
         class="w-full h-full object-cover"
         loading="eager"

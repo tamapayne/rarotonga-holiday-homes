@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
+import heroImage from '../assets/images/hero/ocean-view.png';
 ---
 
 <BaseLayout title="About Us" description="We're a Cook Islands family helping you discover authentic Rarotonga. Learn about our story and why booking with us supports local families.">
@@ -8,11 +10,11 @@ import WhyChooseUs from '../components/WhyChooseUs.astro';
   <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img
-        src="/ocean-view.png"
+      <Image
+        src={heroImage}
         alt=""
-        role="presentation"
         class="w-full h-full object-cover"
+        loading="eager"
       />
     </div>
 

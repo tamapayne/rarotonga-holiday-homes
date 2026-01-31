@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import { getPropertyImages } from '../utils/images';
+
 interface Props {
   images: string[];
   propertyName: string;
@@ -6,20 +9,22 @@ interface Props {
 }
 
 const { images, propertyName, video } = Astro.props;
-const mainImage = images[0];
-const posterImage = images[0]; // Use first image as video poster
-const thumbnails = video ? images.slice(0, 4) : images.slice(1, 5);
-const remainingCount = video ? images.length - 4 : images.length - 5;
+const resolvedImages = getPropertyImages(images);
+const mainImage = resolvedImages[0];
+const posterImage = resolvedImages[0]; // Use first image as video poster
+const thumbnails = video ? resolvedImages.slice(0, 4) : resolvedImages.slice(1, 5);
+const remainingCount = video ? resolvedImages.length - 4 : resolvedImages.length - 5;
 const hasVideo = !!video;
+const imageSrcsForLightbox = resolvedImages.map(img => img.src);
 ---
 
-<div class="image-gallery">
+<div class="image-gallery" data-image-srcs={JSON.stringify(imageSrcsForLightbox)}>
   <!-- Desktop Grid Layout -->
   <div class="hidden md:grid md:grid-cols-4 md:grid-rows-2 gap-2 rounded-xl overflow-hidden h-[500px]">
     <div class="col-span-2 row-span-2 relative">
-      {hasVideo ? (
+      {hasVideo && posterImage ? (
         <div class="relative w-full h-full cursor-pointer group" data-video-trigger>
-          <img
+          <Image
             src={posterImage}
             alt={`${propertyName} - Video`}
             class="w-full h-full object-cover"
@@ -38,21 +43,21 @@ const hasVideo = !!video;
             Watch Video
           </div>
         </div>
-      ) : (
-        <img
+      ) : mainImage ? (
+        <Image
           src={mainImage}
           alt={`${propertyName} - Main image`}
           class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
           data-gallery-trigger
           data-index="0"
         />
-      )}
+      ) : null}
     </div>
     {thumbnails.map((image, index) => {
       const imageIndex = hasVideo ? index : index + 1;
       return (
         <div class="relative">
-          <img
+          <Image
             src={image}
             alt={`${propertyName} - Image ${imageIndex + 1}`}
             class="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
@@ -76,10 +81,10 @@ const hasVideo = !!video;
   <!-- Mobile Slider -->
   <div class="md:hidden relative">
     <div class="overflow-x-auto snap-x snap-mandatory flex gap-2 pb-4 scrollbar-hide">
-      {hasVideo && (
+      {hasVideo && posterImage && (
         <div class="flex-shrink-0 w-[85vw] snap-center">
           <div class="relative w-full h-64 rounded-lg overflow-hidden cursor-pointer group" data-video-trigger>
-            <img
+            <Image
               src={posterImage}
               alt={`${propertyName} - Video`}
               class="w-full h-full object-cover"
@@ -100,9 +105,9 @@ const hasVideo = !!video;
           </div>
         </div>
       )}
-      {images.map((image, index) => (
+      {resolvedImages.map((image, index) => (
         <div class="flex-shrink-0 w-[85vw] snap-center">
-          <img
+          <Image
             src={image}
             alt={`${propertyName} - Image ${index + 1}`}
             class="w-full h-64 object-cover rounded-lg cursor-pointer"
@@ -175,14 +180,17 @@ const hasVideo = !!video;
     </button>
 
     <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
-      1 / {images.length}
+      1 / {resolvedImages.length}
     </div>
   </div>
 </div>
 
-<script define:vars={{ images, propertyName, hasVideo }}>
+<script define:vars={{ propertyName, hasVideo }}>
   let currentIndex = 0;
   let isShowingVideo = false;
+
+  const galleryEl = document.querySelector('.image-gallery');
+  const images = JSON.parse(galleryEl?.dataset.imageSrcs || '[]');
 
   const lightbox = document.getElementById('lightbox');
   const lightboxImage = document.getElementById('lightbox-image');
