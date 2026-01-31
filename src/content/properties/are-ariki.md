@@ -12,7 +12,6 @@ featuredImage: "/images/are-ariki/pool-1.avif"
 video: ""
 images:
   - "/images/are-ariki/pool-2.avif"
-  - "/images/are-ariki/pool-3.avif"
   - "/images/are-ariki/living-room-1.avif"
   - "/images/are-ariki/living-room-2.avif"
   - "/images/are-ariki/living-room-3.avif"
