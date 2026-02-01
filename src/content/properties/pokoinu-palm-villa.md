@@ -9,7 +9,7 @@ price: 250
 priceNote: ""
 featured: true
 featuredImage: "/images/pokoinu-palm-villa/living-room-1.jpeg"
-video: "/videos/pokoinu-palm-villa/tour.mp4"
+video: "https://pjyy8ugv2k.ufs.sh/f/ZIAj04gUXpGl2BaBA6FEwbXQlhPxJgzKRIyCt5Nu9O1UEFpd"
 images:
   - "/images/pokoinu-palm-villa/porch-1.jpeg"
   - "/images/pokoinu-palm-villa/living-room-2.jpeg"
