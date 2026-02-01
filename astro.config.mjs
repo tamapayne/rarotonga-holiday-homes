@@ -7,4 +7,5 @@ export default defineConfig({
   site: 'https://rarotongaescapes.com',
   integrations: [tailwind(), sitemap()],
   output: 'static',
+  trailingSlash: 'never',
 });
